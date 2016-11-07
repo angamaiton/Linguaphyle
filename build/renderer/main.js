@@ -2,6 +2,8 @@ var electron = require('electron')
 var React = require('react')
 var ReactDOM = require('react-dom')
 
+var config = require('../config')
+
 var App = require('./pages/app')
 
 var app
