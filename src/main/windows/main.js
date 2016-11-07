@@ -19,7 +19,8 @@ function init() {
   const win = main.win = new electron.BrowserWindow({
     width: 1200,
     height: 800,
-    title: config.APP_WINDOW_TITLE
+    title: config.APP_WINDOW_TITLE,
+    titleBarStyle: 'hidden-inset' // Hide title bar (Mac)
   })
 
   win.loadURL(config.WINDOW_MAIN)
