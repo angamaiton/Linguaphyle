@@ -1,10 +1,11 @@
 {
-  "name": "electron-quick-start",
+  "name": "Linguaphyle-React",
   "version": "1.0.0",
   "description": "A minimal Electron application",
-  "main": "main.js",
+  "main": "index.js",
   "scripts": {
-    "start": "electron ."
+    "build": "buble src --output build",
+    "start": "npm run build && electron ."
   },
   "repository": "https://github.com/electron/electron-quick-start",
   "keywords": [
@@ -17,6 +18,11 @@
   "author": "GitHub",
   "license": "CC0-1.0",
   "devDependencies": {
+    "buble": "^0.14.2",
     "electron": "^1.4.1"
+  },
+  "dependencies": {
+    "react": "^15.3.2",
+    "react-dom": "^15.3.2"
   }
 }
