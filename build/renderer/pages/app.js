@@ -26,7 +26,8 @@ var App = (function (superclass) {
     return (
       React.createElement( 'div', { className: 'app' },
         React.createElement( 'div', { className: 'content' },
-          React.createElement( Header, { state: state }), "WEEWWWW LADDDD ", this.getView()
+          React.createElement( Header, { state: state }),
+          this.getView()
         )
       )
     )

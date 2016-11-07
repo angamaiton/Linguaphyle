@@ -83,6 +83,19 @@ table {
   background: rgb(40, 40, 40);
 }
 
+/*
+ * CONTENT
+ */
+
+.content {
+  position: relative;
+  width: 100%;
+  overflow-x: hidden;
+  overflow-y: overlay;
+  flex: 1 1 auto;
+  margin-top: 38px;
+}
+
 .header {
   background: rgb(40, 40, 40);
   border-bottom: 1px solid rgb(30, 30, 30);
@@ -122,3 +135,17 @@ table {
 .header .nav.right {
   margin-right: 10px;
 }
+
+/*
+ * LANGUAGE LIST
+ */
+
+ .language-list {
+   width: 33%;
+   list-style: none;
+ }
+
+ .language-list h1 {
+   padding: 5px;
+   font-size: 20px;
+ }

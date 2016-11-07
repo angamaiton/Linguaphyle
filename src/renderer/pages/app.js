@@ -19,7 +19,6 @@ class App extends React.Component {
       <div className='app'>
         <div className='content'>
           <Header state={state} />
-          WEEWWWW LADDDD
           {this.getView()}
         </div>
       </div>

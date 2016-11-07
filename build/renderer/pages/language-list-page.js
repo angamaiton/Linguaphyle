@@ -10,10 +10,28 @@ module.exports = (function (superclass) {
   LanguageListPage.prototype.constructor = LanguageListPage;
 
   LanguageListPage.prototype.render = function render () {
-    var contents = []
+    var languages = [
+      {
+        title: 'Altaic'
+      },
+      {
+        title: 'Indo-European'
+      },
+      {
+        title: 'Finno-Ugric'
+      },
+      {
+        title: 'Sino-Tibetan'
+      }
+    ]
+    var languageList = languages.map(function (branch) {
+      return React.createElement( 'li', { key: branch.title }, React.createElement( 'h1', null, branch.title ))
+    })
 
     return (
-      React.createElement( 'div', { className: 'language-list' }, "most wew lad of all")
+      React.createElement( 'ul', { className: 'language-list' },
+        languageList
+      )
     )
   };
 
