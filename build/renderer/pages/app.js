@@ -22,9 +22,15 @@ var App = (function (superclass) {
     var state = this.props.state
     return (
       React.createElement( 'div', { className: 'app' },
-        React.createElement( 'div', { className: 'content' }, "WEEWWWW LADDDD")
+        React.createElement( 'div', { className: 'content' }, "WEEWWWW LADDDD ", this.getView()
+        )
       )
     )
+  };
+  App.prototype.getView = function getView () {
+    var state = this.props.state
+    var View = Views[state.location.url()]()
+    return (React.createElement( View, { state: state }))
   };
 
   return App;

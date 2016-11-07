@@ -6,6 +6,7 @@ module.exports = class LanguageListPage extends React.Component {
 
     return (
       <div className='language-list'>
+      most wew lad of all
       </div>
     )
   }

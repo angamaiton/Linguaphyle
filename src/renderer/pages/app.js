@@ -16,9 +16,15 @@ class App extends React.Component {
       <div className='app'>
         <div className='content'>
           WEEWWWW LADDDD
+          {this.getView()}
         </div>
       </div>
     )
+  }
+  getView() {
+    const state = this.props.state
+    const View = Views[state.location.url()]()
+    return (<View state={state} />)
   }
 }
 module.exports = App

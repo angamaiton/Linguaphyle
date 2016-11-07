@@ -13,8 +13,7 @@ module.exports = (function (superclass) {
     var contents = []
 
     return (
-      React.createElement( 'div', { className: 'language-list' }
-      )
+      React.createElement( 'div', { className: 'language-list' }, "most wew lad of all")
     )
   };
 
