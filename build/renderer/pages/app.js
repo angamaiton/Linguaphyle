@@ -10,20 +10,19 @@ var Views = {
 }
 
 var App = (function (superclass) {
-  function App(props) {
-    this.state = {
-      title: config.APP_WINDOW_TITLE
-    }
+  function App () {
+    superclass.apply(this, arguments);
   }
 
   if ( superclass ) App.__proto__ = superclass;
   App.prototype = Object.create( superclass && superclass.prototype );
   App.prototype.constructor = App;
+
   App.prototype.render = function render () {
+    var state = this.props.state
     return (
       React.createElement( 'div', { className: 'app' },
-        React.createElement( 'div', { className: 'content' }, "WEEWWWW LADDDD ", this.state.title
-        )
+        React.createElement( 'div', { className: 'content' }, "WEEWWWW LADDDD")
       )
     )
   };

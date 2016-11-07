@@ -10,17 +10,12 @@ const Views = {
 }
 
 class App extends React.Component {
-  constructor(props) {
-    this.state = {
-      title: config.APP_WINDOW_TITLE
-    }
-  }
   render() {
+    const state = this.props.state
     return (
       <div className='app'>
         <div className='content'>
           WEEWWWW LADDDD
-          {this.state.title}
         </div>
       </div>
     )

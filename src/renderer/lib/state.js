@@ -57,6 +57,18 @@ function save(state,cb) {
   })
 }
 
-function setupStateSaved() {
-  
+function saveImmediate(state, cb) {
+  appConfig.write(copy, (err) => {
+    if (err) console.error(err)
+    else State.emit('stateSaved')
+  })
+}
+
+function setupStateSaved(cb) {
+
+  const saved = {
+    version: config.APP_VERSION
+  }
+
+  cb(null, saved)
 }
