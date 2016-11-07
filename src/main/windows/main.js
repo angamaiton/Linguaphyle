@@ -23,6 +23,10 @@ function init() {
   win.once('ready-to-show', () => {
     win.show()
   })
+
+  win.on('close', () => {
+    app.quit()
+  })
 }
 
 function show() {

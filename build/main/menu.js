@@ -4,6 +4,8 @@ module.exports = {
 
 var windows = require('./windows')
 
+var config = require('../config')
+
 var electron = require('electron')
 
 var app = electron.app
@@ -18,14 +20,62 @@ function init() {
 function getMenuTemplate() {
   var template = [
     {
-      label: 'File'
+      label: 'File',
+      submenu: [
+        {
+          role: 'close'
+        }
+      ]
     },
     {
-      label: 'Edit'
+      label: 'Edit',
+      submenu: [
+        {
+          role: 'undo'
+        },
+        {
+          role: 'redo'
+        },
+        {
+          type: 'separator'
+        },
+        {
+          role: 'cut'
+        },
+        {
+          role: 'copy'
+        },
+        {
+          role: 'paste'
+        },
+        {
+          role: 'delete'
+        },
+        {
+          role: 'selectall'
+        }
+      ]
     },
     {
       label: 'View'
     }
   ]
+
+  if (process.platform === 'darwin') {
+    template.unshift({
+      label: config.APP_NAME,
+      submenu: [
+        {
+          role: 'about'
+        },
+        {
+          type: 'separator'
+        },
+        {
+          role: 'quit'
+        }
+      ]
+    })
+  }
   return template
 }
