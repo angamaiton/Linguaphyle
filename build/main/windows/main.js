@@ -1,5 +1,7 @@
 var main = module.exports = {
   init: init,
+  setTitle: setTitle,
+  show: show,
   toggleDevTools: toggleDevTools,
   win: null
 }
@@ -16,7 +18,8 @@ function init() {
 
   var win = main.win = new electron.BrowserWindow({
     width: 1200,
-    height: 800
+    height: 800,
+    title: config.APP_WINDOW_TITLE
   })
 
   win.loadURL(config.WINDOW_MAIN)
@@ -37,6 +40,11 @@ function toggleDevTools() {
   } else {
     main.win.webContents.openDevTools({ detach: true })
   }
+}
+
+function setTitle(title) {
+  if (!main.win) { return }
+  main.win.setTitle(title)
 }
 
 function show() {
