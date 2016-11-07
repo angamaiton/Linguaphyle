@@ -6,4 +6,4 @@ const App = require('./pages/app')
 
 let app
 
-app = ReactDOM.render(<App state={state} />, document.querySelector('#body'))
+app = ReactDOM.render(<App />, document.querySelector('#body'))

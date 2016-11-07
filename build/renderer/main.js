@@ -6,4 +6,4 @@ var App = require('./pages/app')
 
 var app
 
-app = ReactDOM.render(React.createElement( App, { state: state }), document.querySelector('#body'))
+app = ReactDOM.render(React.createElement( App, null ), document.querySelector('#body'))

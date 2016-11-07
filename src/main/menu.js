@@ -2,13 +2,12 @@ module.exports = {
   init
 }
 
-const windows = require('./windows')
-
-const config = require('../config')
-
 const electron = require('electron')
 
 const app = electron.app
+
+const config = require('../config')
+const windows = require('./windows')
 
 let menu = null
 
@@ -57,7 +56,21 @@ function getMenuTemplate() {
       ]
     },
     {
-      label: 'View'
+      label: 'View',
+      submenu: [
+        {
+          label: 'Developer',
+          submenu: [
+            {
+              label: 'Developer Tools',
+              accelerator: process.platform === 'darwin'
+              ? 'Alt+Command+I'
+              : 'Ctrl+Shift+I',
+              click: () => windows.main.toggleDevTools()
+            }
+          ]
+        }
+      ]
     }
   ]
 

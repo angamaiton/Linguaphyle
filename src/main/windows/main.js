@@ -1,5 +1,6 @@
 const main = module.exports = {
   init,
+  toggleDevTools,
   win: null
 }
 const config = require('../../config')
@@ -27,6 +28,15 @@ function init() {
   win.on('close', () => {
     app.quit()
   })
+}
+
+function toggleDevTools() {
+  if (!main.win) return
+  if (main.win.webContents.isDevToolsOpened()) {
+    main.win.webContents.closeDevTools()
+  } else {
+    main.win.webContents.openDevTools({ detach: true })
+  }
 }
 
 function show() {
