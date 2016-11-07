@@ -3,6 +3,8 @@ var React = require('react')
 
 var config = require('../../config')
 
+var Header = require('../components/header')
+
 var LanguageListPage = require('./language-list-page')
 
 var Views = {
@@ -20,9 +22,11 @@ var App = (function (superclass) {
 
   App.prototype.render = function render () {
     var state = this.props.state
+
     return (
       React.createElement( 'div', { className: 'app' },
-        React.createElement( 'div', { className: 'content' }, "WEEWWWW LADDDD ", this.getView()
+        React.createElement( 'div', { className: 'content' },
+          React.createElement( Header, { state: state }), "WEEWWWW LADDDD ", this.getView()
         )
       )
     )

@@ -3,6 +3,8 @@ const React = require('react')
 
 const config = require('../../config')
 
+const Header = require('../components/header')
+
 const LanguageListPage = require('./language-list-page')
 
 const Views = {
@@ -12,9 +14,11 @@ const Views = {
 class App extends React.Component {
   render() {
     const state = this.props.state
+
     return (
       <div className='app'>
         <div className='content'>
+          <Header state={state} />
           WEEWWWW LADDDD
           {this.getView()}
         </div>
