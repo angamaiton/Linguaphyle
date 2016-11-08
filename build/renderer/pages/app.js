@@ -4,6 +4,8 @@ var React = require('react')
 var config = require('../../config')
 
 var Header = require('../components/header')
+var ActionBar = require('../components/action-bar')
+var Col = require('react-bootstrap').Col
 
 var LanguageListPage = require('./language-list-page')
 
@@ -27,7 +29,10 @@ var App = (function (superclass) {
       React.createElement( 'div', { className: 'app' },
         React.createElement( 'div', { className: 'content' },
           React.createElement( Header, { state: state }),
-          this.getView()
+          React.createElement( ActionBar, { state: state }),
+            React.createElement( Col, { sm: 6, md: 3 },
+              this.getView()
+            )
         )
       )
     )

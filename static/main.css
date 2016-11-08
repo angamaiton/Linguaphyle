@@ -87,9 +87,18 @@ table {
  * CONTENT
  */
 
-.content {
+.content, .workbench {
   position: relative;
   width: 100%;
+  overflow-x: hidden;
+  overflow-y: overlay;
+  flex: 1 1 auto;
+  margin-top: 38px;
+}
+
+.view {
+  position: relative;
+  width: 66%;
   overflow-x: hidden;
   overflow-y: overlay;
   flex: 1 1 auto;
@@ -148,4 +157,17 @@ table {
  .language-list h1 {
    padding: 5px;
    font-size: 20px;
+ }
+
+ /*
+ * ACTION BAR
+ */
+
+ .action-bar .action-item {
+    width: 50px;
+    border: 1px solid #CCC;
+    color: #6C6C6C;
+    background-color: #E2E2E2;
+    padding: 0 5px;
+    line-height: initial;
  }

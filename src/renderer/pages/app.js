@@ -4,6 +4,8 @@ const React = require('react')
 const config = require('../../config')
 
 const Header = require('../components/header')
+const ActionBar = require('../components/action-bar')
+const Col = require('react-bootstrap').Col
 
 const LanguageListPage = require('./language-list-page')
 
@@ -19,7 +21,10 @@ class App extends React.Component {
       <div className='app'>
         <div className='content'>
           <Header state={state} />
-          {this.getView()}
+          <ActionBar state={state} />
+            <Col sm={6} md={3}>
+              {this.getView()}
+            </Col>
         </div>
       </div>
     )

@@ -1,4 +1,6 @@
 const React = require('react')
+const Nav = require('react-bootstrap').Nav
+const NavItem = require('react-bootstrap').NavItem
 
 module.exports = class LanguageListPage extends React.Component {
   render() {
@@ -17,13 +19,13 @@ module.exports = class LanguageListPage extends React.Component {
       }
     ]
     let languageList = languages.map((branch) => {
-      return <li key={branch.title}><h1>{branch.title}</h1></li>
+      return <NavItem key={branch.title}><h1>{branch.title}</h1></NavItem>
     })
 
     return (
-      <ul className='language-list'>
+      <Nav bsStyle='pills' stacked className='language-list'>
         {languageList}
-      </ul>
+      </Nav>
     )
   }
 }
