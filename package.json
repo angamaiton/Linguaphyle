@@ -7,7 +7,7 @@
     "build": "buble src --output build",
     "start": "npm run build && electron ."
   },
-  "repository": "https://github.com/electron/electron-quick-start",
+  "repository": "https://github.com/angamaiton/linguaphyle",
   "keywords": [
     "Electron",
     "quick",
